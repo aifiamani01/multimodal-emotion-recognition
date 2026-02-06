@@ -36,4 +36,21 @@ This project aims to explore how multimodal representations can be leveraged for
 
 ---
 
+
 ## Repository Structure
+experiments/ # Scripts for embedding extraction and classifier training
+analysis/ # Jupyter notebooks for visualizations and evaluations
+data/ # Raw and processed dataset files
+README.md # This file
+research_questions.md # Guiding research questions
+data_notes.md # Notes about dataset sources, preprocessing, and labels
+limitations.md # Known limitations and challenges
+
+
+---
+
+## Status
+- Repository created  
+- Initial planning, research questions, and dataset notes documented  
+- Next step: implement embedding extraction for each modality
+
