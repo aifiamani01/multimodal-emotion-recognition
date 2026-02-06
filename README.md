@@ -1,17 +1,39 @@
 # Multimodal Emotion Recognition
 
 ## Motivation
-Modern action recognition models achieve high accuracy, but it is unclear whether they encode affective or sentiment-related information.
-Understanding this is important for human-centered AI and social perception.
+Understanding human emotions from multiple modalities (video, facial expressions, and audio) is a critical challenge in AI.  
+Most emotion recognition systems focus on a single modality, but combining multiple modalities can improve robustness and capture subtle emotional cues.  
 
-## Core Question
-Do pretrained video action recognition models implicitly encode sentiment?
+This project aims to explore how multimodal representations can be leveraged for emotion recognition, starting with analysis of frozen pretrained models.
 
-## Initial Approach
-I plan to probe frozen pretrained models using lightweight classifiers to analyze whether sentiment information is present in learned representations.
+---
+
+## Core Research Questions
+1. Can multimodal representations (video + facial + audio) improve emotion recognition compared to single modalities?  
+2. Which modalities contribute most to recognizing specific emotions?  
+3. How does temporal information in video and audio affect recognition performance?  
+4. Can frozen pretrained models provide embeddings that capture emotional content without fine-tuning?  
+5. What are the limitations and failure cases of multimodal emotion recognition in small datasets?
+
+---
 
 ## Scope
-This project focuses on analysis and understanding rather than achieving SOTA.
+- Analysis-focused: initial experiments will use frozen pretrained models for each modality.  
+- Proof-of-concept: small datasets (e.g., RAVDESS) will be used initially.  
+- Not aiming for SOTA at this stage; focus is on understanding embeddings, modality contributions, and research workflow.
 
-## Status
-Literature review and experimental design.
+---
+
+## Planned Approach
+1. Extract embeddings from each modality:
+   - **Video:** pretrained TimeSformer for action recognition  
+   - **Face:** pretrained face recognition / expression model  
+   - **Audio:** pretrained speech / audio model (e.g., Wav2Vec2, YAMNet)  
+2. Train a simple classifier on concatenated embeddings (linear probe / small MLP)  
+3. Visualize and analyze embeddings using PCA/t-SNE  
+4. Identify which modalities contribute most to emotion recognition  
+5. Document preliminary observations, limitations, and open questions
+
+---
+
+## Repository Structure
